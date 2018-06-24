@@ -13,6 +13,13 @@
 <meta name="theme-color" content="#222">
 
 
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-bounce.min.css?v=1.0.2" rel="stylesheet">
+
 
 
 
@@ -97,16 +104,16 @@
 <meta name="keywords" content="规则引擎,QLExpress">
 <meta property="og:type" content="article">
 <meta property="og:title" content="QLExpress使用简介">
-<meta property="og:url" content="https://127.0.0.1:4000/2018/01/02/QLExpress使用简介/index.html">
-<meta property="og:site_name" content="Blog">
+<meta property="og:url" content="https://newbigtech.github.io/2018/01/02/QLExpress使用简介/index.html">
+<meta property="og:site_name" content="Haibo&#39;s Blog">
 <meta property="og:description" content="1. 背景运营人员在活动投放时通常会根据某个用户的多个标签进行与或非 IN Contains Between And &amp;gt; &amp;lt; ==  等决定是否给该用户投放相应的活动。后台为了实现该功能就需要使用规则引擎。提到规则引擎，可能会想到Drools甚至是antlr，Groovy,这几个虽然功能都很强大，但是使用起来还是不太方便，经过 Google 之后发现了QLExpress，一个阿里开源的">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://127.0.0.1:4000/images/20171026112204027.jpeg">
-<meta property="og:updated_time" content="2018-01-03T03:49:05.021Z">
+<meta property="og:image" content="https://newbigtech.github.io/images/20171026112204027.jpeg">
+<meta property="og:updated_time" content="2018-06-24T06:54:20.220Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="QLExpress使用简介">
 <meta name="twitter:description" content="1. 背景运营人员在活动投放时通常会根据某个用户的多个标签进行与或非 IN Contains Between And &amp;gt; &amp;lt; ==  等决定是否给该用户投放相应的活动。后台为了实现该功能就需要使用规则引擎。提到规则引擎，可能会想到Drools甚至是antlr，Groovy,这几个虽然功能都很强大，但是使用起来还是不太方便，经过 Google 之后发现了QLExpress，一个阿里开源的">
-<meta name="twitter:image" content="https://127.0.0.1:4000/images/20171026112204027.jpeg">
+<meta name="twitter:image" content="https://newbigtech.github.io/images/20171026112204027.jpeg">
 
 
 
@@ -135,13 +142,13 @@
 
 
 
-  <link rel="canonical" href="https://127.0.0.1:4000/2018/01/02/QLExpress使用简介/"/>
+  <link rel="canonical" href="https://newbigtech.github.io/2018/01/02/QLExpress使用简介/"/>
 
 
 
 
 
-  <title>QLExpress使用简介 | Blog</title>
+  <title>QLExpress使用简介 | Haibo's Blog</title>
   
 
 
@@ -177,7 +184,7 @@
     <div class="custom-logo-site-title">
       <a href="/"  class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title">Blog</span>
+        <span class="site-title">Haibo's Blog</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
@@ -222,12 +229,12 @@
         </li>
       
         
-        <li class="menu-item menu-item-about">
-          <a href="/about" rel="section">
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
             
-            关于
+            标签
           </a>
         </li>
       
@@ -242,12 +249,12 @@
         </li>
       
         
-        <li class="menu-item menu-item-tags">
-          <a href="/tags" rel="section">
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
             
-            标签
+            关于
           </a>
         </li>
       
@@ -284,7 +291,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://127.0.0.1:4000/2018/01/02/QLExpress使用简介/">
+    <link itemprop="mainEntityOfPage" href="https://newbigtech.github.io/2018/01/02/QLExpress使用简介/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Haibo">
@@ -293,7 +300,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Blog">
+      <meta itemprop="name" content="Haibo's Blog">
     </span>
 
     
@@ -389,11 +396,11 @@
 <li><p>关于对象，类，属性，方法的调用</p>
 </li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">import com.ql.util.express.test.OrderQuery;</span><br><span class="line">//系统自动会import java.lang.*,import java.util.*;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">query = new OrderQuery();//创建class实例,会根据classLoader信息，自动补全类路径</span><br><span class="line">query.setCreateDate(new Date());//设置属性</span><br><span class="line">query.buyer = &quot;张三&quot;;//调用属性,默认会转化为setBuyer(&quot;张三&quot;)</span><br><span class="line">result = bizOrderDAO.query(query);//调用bean对象的方法</span><br><span class="line">System.out.println(result.getId());//静态方法</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> com.ql.util.express.test.OrderQuery;</span><br><span class="line"><span class="comment">//系统自动会import java.lang.*,import java.util.*;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">query = <span class="keyword">new</span> OrderQuery();<span class="comment">//创建class实例,会根据classLoader信息，自动补全类路径</span></span><br><span class="line">query.setCreateDate(<span class="keyword">new</span> Date());<span class="comment">//设置属性</span></span><br><span class="line">query.buyer = <span class="string">"张三"</span>;<span class="comment">//调用属性,默认会转化为setBuyer("张三")</span></span><br><span class="line">result = bizOrderDAO.query(query);<span class="comment">//调用bean对象的方法</span></span><br><span class="line">System.out.println(result.getId());<span class="comment">//静态方法</span></span><br></pre></td></tr></table></figure>
 <ul>
 <li>自定义操作符号：addOperatorWithAlias+addOperator+addFunction</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">runner.addOperatorWithAlias(&quot;如果&quot;, &quot;if&quot;,null);</span><br><span class="line">runner.addOperatorWithAlias(&quot;则&quot;, &quot;then&quot;,null);</span><br><span class="line">runner.addOperatorWithAlias(&quot;否则&quot;, &quot;else&quot;,null);</span><br><span class="line"></span><br><span class="line">exp = &quot;如果  (如果 1==2 则 false 否则 true) 则 &#123;2+2;&#125; 否则 &#123;20 + 20;&#125;&quot;;</span><br><span class="line">DefaultContext&lt;String, Object&gt; context = new DefaultContext&lt;String, Object&gt;();</span><br><span class="line">runner.execute(exp,nil,null,false,false,null);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">//定义一个继承自com.ql.util.express.Operator的操作符</span><br><span class="line">public class JoinOperator extends Operator&#123;</span><br><span class="line">	public Object executeInner(Object[] list) throws Exception &#123;</span><br><span class="line">		Object opdata1 = list[0];</span><br><span class="line">		Object opdata2 = list[1];</span><br><span class="line">		if(opdata1 instanceof java.util.List)&#123;</span><br><span class="line">			((java.util.List)opdata1).add(opdata2);</span><br><span class="line">			return opdata1;</span><br><span class="line">		&#125;else&#123;</span><br><span class="line">			java.util.List result = new java.util.ArrayList();</span><br><span class="line">			result.add(opdata1);</span><br><span class="line">			result.add(opdata2);</span><br><span class="line">			return result;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">ExpressRunner runner = new ExpressRunner();</span><br><span class="line">DefaultContext&lt;String, Object&gt; context = new DefaultContext&lt;String, Object&gt;();</span><br><span class="line">runner.addOperator(&quot;join&quot;,new JoinOperator());</span><br><span class="line">Object r = runner.execute(&quot;1 join 2 join 3&quot;, context, null, false, false);</span><br><span class="line">System.out.println(r);</span><br><span class="line">//返回结果  [1, 2, 3]</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">class GroupOperator extends Operator &#123;</span><br><span class="line">	public GroupOperator(String aName) &#123;</span><br><span class="line">		this.name= aName;</span><br><span class="line">	&#125;</span><br><span class="line">	public Object executeInner(Object[] list)throws Exception &#123;</span><br><span class="line">		Object result = Integer.valueOf(0);</span><br><span class="line">		for (int i = 0; i &lt; list.length; i++) &#123;</span><br><span class="line">			result = OperatorOfNumber.add(result, list[i],false);//根据list[i]类型（string,number等）做加法</span><br><span class="line">		&#125;</span><br><span class="line">		return result;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">runner.addFunction(&quot;group&quot;, new GroupOperator(&quot;group&quot;));</span><br><span class="line">ExpressRunner runner = new ExpressRunner();</span><br><span class="line">DefaultContext&lt;String, Object&gt; context = new DefaultContext&lt;String, Object&gt;();</span><br><span class="line">runner.addOperator(&quot;join&quot;,new JoinOperator());</span><br><span class="line">Object r = runner.execute(&quot;group(1,2,3)&quot;, context, null, false, false);</span><br><span class="line">System.out.println(r);</span><br><span class="line">//返回结果  6</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">runner.addOperatorWithAlias(<span class="string">"如果"</span>, <span class="string">"if"</span>,<span class="keyword">null</span>);</span><br><span class="line">runner.addOperatorWithAlias(<span class="string">"则"</span>, <span class="string">"then"</span>,<span class="keyword">null</span>);</span><br><span class="line">runner.addOperatorWithAlias(<span class="string">"否则"</span>, <span class="string">"else"</span>,<span class="keyword">null</span>);</span><br><span class="line"></span><br><span class="line">exp = <span class="string">"如果  (如果 1==2 则 false 否则 true) 则 &#123;2+2;&#125; 否则 &#123;20 + 20;&#125;"</span>;</span><br><span class="line">DefaultContext&lt;String, Object&gt; context = <span class="keyword">new</span> DefaultContext&lt;String, Object&gt;();</span><br><span class="line">runner.execute(exp,nil,<span class="keyword">null</span>,<span class="keyword">false</span>,<span class="keyword">false</span>,<span class="keyword">null</span>);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//定义一个继承自com.ql.util.express.Operator的操作符</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">JoinOperator</span> <span class="keyword">extends</span> <span class="title">Operator</span></span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> Object <span class="title">executeInner</span><span class="params">(Object[] list)</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">		Object opdata1 = list[<span class="number">0</span>];</span><br><span class="line">		Object opdata2 = list[<span class="number">1</span>];</span><br><span class="line">		<span class="keyword">if</span>(opdata1 <span class="keyword">instanceof</span> java.util.List)&#123;</span><br><span class="line">			((java.util.List)opdata1).add(opdata2);</span><br><span class="line">			<span class="keyword">return</span> opdata1;</span><br><span class="line">		&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">			java.util.List result = <span class="keyword">new</span> java.util.ArrayList();</span><br><span class="line">			result.add(opdata1);</span><br><span class="line">			result.add(opdata2);</span><br><span class="line">			<span class="keyword">return</span> result;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">ExpressRunner runner = <span class="keyword">new</span> ExpressRunner();</span><br><span class="line">DefaultContext&lt;String, Object&gt; context = <span class="keyword">new</span> DefaultContext&lt;String, Object&gt;();</span><br><span class="line">runner.addOperator(<span class="string">"join"</span>,<span class="keyword">new</span> JoinOperator());</span><br><span class="line">Object r = runner.execute(<span class="string">"1 join 2 join 3"</span>, context, <span class="keyword">null</span>, <span class="keyword">false</span>, <span class="keyword">false</span>);</span><br><span class="line">System.out.println(r);</span><br><span class="line"><span class="comment">//返回结果  [1, 2, 3]</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">GroupOperator</span> <span class="keyword">extends</span> <span class="title">Operator</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="title">GroupOperator</span><span class="params">(String aName)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">this</span>.name= aName;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> Object <span class="title">executeInner</span><span class="params">(Object[] list)</span><span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">		Object result = Integer.valueOf(<span class="number">0</span>);</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; list.length; i++) &#123;</span><br><span class="line">			result = OperatorOfNumber.add(result, list[i],<span class="keyword">false</span>);<span class="comment">//根据list[i]类型（string,number等）做加法</span></span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">return</span> result;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">runner.addFunction(<span class="string">"group"</span>, <span class="keyword">new</span> GroupOperator(<span class="string">"group"</span>));</span><br><span class="line">ExpressRunner runner = <span class="keyword">new</span> ExpressRunner();</span><br><span class="line">DefaultContext&lt;String, Object&gt; context = <span class="keyword">new</span> DefaultContext&lt;String, Object&gt;();</span><br><span class="line">runner.addOperator(<span class="string">"join"</span>,<span class="keyword">new</span> JoinOperator());</span><br><span class="line">Object r = runner.execute(<span class="string">"group(1,2,3)"</span>, context, <span class="keyword">null</span>, <span class="keyword">false</span>, <span class="keyword">false</span>);</span><br><span class="line">System.out.println(r);</span><br><span class="line"><span class="comment">//返回结果  6</span></span><br></pre></td></tr></table></figure>
 <ul>
 <li>类的静态方法，对象的方法绑定：addFunctionOfClassMethod+addFunctionOfServiceMethod</li>
 </ul>
@@ -587,6 +594,19 @@
 
         <div class="links-of-author motion-element">
           
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/newbigTech" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                    
+                      GitHub
+                    
+                </a>
+              </span>
+            
+          
         </div>
 
         
@@ -632,7 +652,7 @@
       <div class="footer-inner">
         <div class="copyright" >
   
-  &copy; 
+  &copy;  2017 - 
   <span itemprop="copyrightYear">2018</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
@@ -805,6 +825,21 @@
   
 
   
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
 
   
 
